@@ -1,0 +1,153 @@
+body{
+	background-color: #333;
+}
+#erreur{
+	height: 50px;
+	width: 100%;
+	border-style: none;
+	text-align: center;
+	top:0;
+	font-style: bold;
+	margin:auto;
+	background-color: #BD3749;
+	color:white;
+	position: fixed;
+}
+.col1{
+	padding-left:;
+}
+.titre{
+	margin:auto;
+}
+.formulaire{
+	margin-bottom:35px;
+}
+
+#inputConnexion{
+	height: 50px;
+	width: 60%;
+	border-radius:10px;
+	border-style: none;
+
+}
+.custom-select{
+	height: 50px;
+	width: 60%;
+	border-radius:10px;
+	border-style: none;
+}
+#btnConnexion{
+	background-color:#154854;
+	color:white;
+	height: 50px;
+	width: 60%;
+	border-radius:10px;
+	border-style: none;
+
+}
+#btnConnexion:hover{
+	background-color:#b4cc83;
+	color:white;
+}
+.formLien{
+    padding-left:30px;
+    padding-right:30px;
+	height: 50px;
+	width: 50%;
+}
+
+.titre{
+	font-size: 100px;
+}
+.text_accueil{
+	background-color: white;
+	height: 200px;
+    margin-left:20%;
+    margin-right:20%;
+    margin-top: 5%;
+}
+.hrIndexConnexion{
+   width : 5px;
+   height : 250px;
+   display: inline-block;
+   margin-bottom: 0px;
+}
+.formLien800maxWidth{
+	display: none;
+}
+
+
+/*******************************************/
+
+@media (max-width: 1024px){
+  .hrIndexConnexion{
+    display: none;
+  }
+  #inputConnexion{
+		width: 80%;
+	}
+	#btnConnexion{
+		width: 80%;
+	}
+	.titre{
+		margin-left:40px;
+		text-align:center;
+	}
+@media (max-width: 800px){
+  .hrIndexConnexion{
+    display: none;
+  }
+  .formulaire{
+    margin-left:20%;
+    margin-right: 10%;
+  }
+
+	#inputConnexion{
+		width: 80%;
+	}
+	#btnConnexion{
+		width: 80%;
+	}
+	#aSinscrire{
+    display: none;
+
+	}
+	#aMDPoublie{
+	     display: none;
+
+	}
+	.formLien800maxWidth{
+	      display: block;
+    }
+}
+   @media (max-width: 20px){
+   .titre{
+   	font-size: 80px;
+   	text-align: center;
+}
+  .hrIndexConnexion{
+    display: none;
+  }
+  .formulaire{
+    margin-left:20%;
+    margin-right: 10%;
+  }
+
+	#inputConnexion{
+		width: 80%;
+	}
+	#btnConnexion{
+		width: 80%;
+	}
+	#aSinscrire{
+    display: none;
+
+	}
+	#aMDPoublie{
+	     display: none;
+
+	}
+	.formLien800maxWidth{
+	      display: block;
+    }
+     }

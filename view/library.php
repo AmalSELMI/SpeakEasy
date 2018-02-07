@@ -5,6 +5,7 @@
 
     if(isset($_SESSION['erreur'])){
       echo $_SESSION['erreur'];
+      unset($_SESSION['erreur']);     // A remplacer par une pop-up
     }
 
     // Récupérer les informations dans la session de l'utilisateur.

@@ -55,7 +55,7 @@ $("#contact").on("click",function(){
 
         function reset() {
           recognizing = false;
-          
+
         }
 
         function toggleStartStop() {
@@ -66,11 +66,20 @@ $("#contact").on("click",function(){
             recognition.start();
             recognizing = true;
             call.removeClass("btn-sucess").addClass("btn-danger");
-           
+
           }
         }
 
-
-
-
-
+///Media query for service page//Contacts menu/////
+$(window).on("load, resize", function() {
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 768) {
+            $("#card_contacts").addClass("hidden");
+    }
+});
+$(window).on("load, resize", function() {
+    var viewportWidth = $(window).width();
+    if (viewportWidth > 768) {
+            $("#card_contacts").removeClass("hidden");
+    }
+});

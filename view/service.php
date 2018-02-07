@@ -5,6 +5,7 @@
 
         if(isset($_SESSION['erreur'])){
           echo $_SESSION['erreur'];
+          unset($_SESSION['erreur']);     // A remplacer par une pop-up
         }
 
         // Récupérer les informations dans la session de l'utilisateur.
@@ -32,12 +33,12 @@
 
             <!-- contacts card -->
 
-            <div class="card card-default float-left card_contacts hidden-xs " id="card_contacts">
+            <div class="card card-default float-left card_contacts " id="card_contacts">
                   <div id="search-container" class="p-2 center">
                     <input type="text" placeholder="Search Contact here.."  >
                     <button id="search"><i class="fa fa-search float-right" aria-hidden="true"></i></button>
                   </div>
-                    <ul class="list-group pull-down pre-scrollable" id="contact-list">
+                    <ul class="list-group pull-down pre-scrollable listecontacts" id="contact-list">
                         <li class="list-group-item">
 <?php
                             // Charger la liste des personnes connectées.
@@ -46,7 +47,7 @@
                             if($requete){               // Des personnes sont en ligne.
                                 foreach($requete as $pseudo => $value) {
 ?>
-                                    <div class="row w-20">
+                                    <div class="row w-20" style="width: 150px;">
                                         <div class="col-sm-8 col-md-3 px-0 d-flex flex-row">
                                             <img src="ninja.jpg" class="rounded-circle mx-auto d-block img-fluid li-el">
                                             <label class="p-2 "><?php echo $value ?></label>
