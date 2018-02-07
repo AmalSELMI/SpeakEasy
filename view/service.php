@@ -19,7 +19,8 @@
 <?php
             require_once('CDN.php');      // Ajout des CDN.
 ?>
-            <link rel="stylesheet" type="text/css" href="stylesheet.css">
+            <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+            <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
             <title>Appel</title>
           </head>
           <body>
@@ -31,7 +32,7 @@
 
             <!-- contacts card -->
 
-            <div class="card card-default float-left card_contacts " id="card_contacts">
+            <div class="card card-default float-left card_contacts hidden-xs " id="card_contacts">
                   <div id="search-container" class="p-2 center">
                     <input type="text" placeholder="Search Contact here.."  >
                     <button id="search"><i class="fa fa-search float-right" aria-hidden="true"></i></button>
@@ -71,20 +72,22 @@
                 </div>
                 <div class="container_call">
                     <div id="videocall" >
-                        <textarea id="textarea" ></textarea>
+                    </div>
+                    <div id="text_area">
+                      <textarea id="textarea"></textarea>
                     </div>
 
 
 
                     <div class="buttons">
-                      <button id="button" class="btn btn-success btn-circle btn-lg mobile-menu-button" onclick="toggleStartStop()"></button>
                       <button type="button" class="btn btn-success btn-circle btn-lg mobile-menu-button" title="contact" id="contact"><i class="fas fa-user-plus"></i></button>
-                      <button type="button" class="btn btn-danger btn-circle btn-lg" title="End-Call" id="endcall"><i class="fas fa-phone"></i></button>
+                      <button type="button" class="btn btn-success btn-circle btn-lg" id="call" onclick="toggleStartStop()"><i class="fas fa-phone"></i></button>
                       <button type="button" class="btn btn-primary btn-circle btn-lg disabled" title="Download-File" id="download"><i class="fas fa-download"></i></button>
                     </div>
                     <div class="input">
                       <input type="text" name="tags" id="tags" class="tags" placeholder=" insert tags here..">
                       <input type="button" name="SaveTags" value="SaveTags" id="SaveTags" class="btn btn-success SaveTags disabled">
+
                     </div>
                     <div class="detect_tags" id="detect_tags"><ul></ul></div>
               </div>

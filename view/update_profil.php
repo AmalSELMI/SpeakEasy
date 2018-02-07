@@ -19,14 +19,14 @@
 <?php
     require_once('CDN.php');      // Ajout des CDN.
 ?>
-    <link rel="stylesheet" type="text/css" href="update_profil.css">
+    <link rel="stylesheet" type="text/css" href="css/update_profil.css">
     <title>Mise à jour du profil</title>
   </head>
   <body>
         <!-- MENU -->
 <?php
     require_once('menu.php');
-?> 
+?>
         <!-- CONTENT -->
     <!-- UPDATE PICTURE -->
     <div class="row">
@@ -41,9 +41,9 @@
                    </div><br>
                    <p>Des photos nettes et de face permettent aux hôtes et aux voyageurs d'apprendre à se connaître. Personne n'a envie d'héberger un paysage ! Assurez-vous d'utiliser une photo qui montre clairement votre visage et qui ne contient pas d'informations personnelles ou sensibles, car les hôtes ou voyageurs la verront.</p>
                 </div>
-            </div>    
+            </div>
         </div>
-      
+
 
     <!-- UPDATE INFO -->
 
@@ -51,12 +51,12 @@
       		<h3>Modifiez votre profil</h3><br />
           		<div id="form">
           			<form method="post" action="../control/majProfil.php" class="form-inline">
-            				
+
                     <div class="form-group">
               				  <label class="prenom" for="inputFirstname6">Prénom</label>
               			    <input type="text" name="inputFirstname6" id="inputFirstname6" class="form-control mx-sm-3" aria-describedby="firstnameHelpInline" value="<?php echo Securite::afficherHTML($user->getPrenom()); ?>">
             				</div>
-            				
+
                     <div class="form-group">
               				  <label class="nom" for="inputName6">Nom</label>
               				  <input type="name" name="inputName6" id="inputName6" class="form-control mx-sm-3" aria-describedby="nameHelpInline" value="<?php echo Securite::afficherHTML($user->getNom()); ?>">
@@ -67,13 +67,13 @@
                         <input type="pseudo" name="inputPseudo6" id="inputPseudo6" class="form-control mx-sm-3" aria-describedby="pseudoHelpInline" value="<?php echo Securite::afficherHTML($user->getPseudo()); ?>">
                     </div><br />
                     <p class="explain">Doit-être compris entre 8-20 charactères.</p>
-            				
+
                     <div class="form-group">
               				  <label class="email" for="inputEmail6">Email</label>
               				  <input type="email" name="inputEmail6" id="inputEmail6" class="form-control mx-sm-3" aria-describedby="emailHelpInline" value="<?php echo Securite::afficherHTML($user->getMail()); ?>">
             				</div><br />
                     <p class="explain">Sur votre profil public, seul votre pseudo est visible.<br /> Lorsque vous passez un appel, votre correspondant voit votre pseudo.</p>
-            				
+
                     <div class="form-group">
               				  <label class="city" for="inputCity6">Lieu de résidence</label>
               				  <input type="city" name="inputCity6" id="inputCity6" class="form-control mx-sm-3" aria-describedby="cityHelpInline" value="<?php echo Securite::afficherHTML($user->getAdresse()); ?>">

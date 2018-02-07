@@ -22,10 +22,10 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	    <meta name="viewport" content="initial-scale=1">
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Varela+Round" rel="stylesheet">
-
+      <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+			 <link rel="stylesheet" href="css/inscription.css">
 	    <title>Inscription</title>
 	</head>
 	<body>
@@ -61,7 +61,7 @@
 					<!--Langue-->
 					<div class="input-group mb-3">
 					  <div class="input-group-prepend">
-					   
+
 					  </div>
 					  <select onfocus="currentForm = this.form;" class="custom-select" id="inputGroupSelect03"  class="inputEmail" name="Langue" value="<?php if (isset($_POST['Langue'])) echo Securite::afficherHTML($_POST['Langue']); ?>">
 					    <option selected>Langage</option>
@@ -78,7 +78,7 @@
 					    <option value="Neerlandais">Neerlandais</option>
 					  </select>
 					</div>
-              </div> 
+              </div>
 
 
               <div id="col1" class="col-md-5">
@@ -92,7 +92,7 @@
 					<!--Question des sécurité-->
 					<div class="input-group mb-3">
 					  <div class="input-group-prepend">
-					   
+
 					  </div>
 					  <select class="custom-select" id="inputGroupSelect03">
 					    <option selected>Question de sécurité</option>
@@ -106,179 +106,23 @@
 					<!--Réponse-->
 			  		 <input onfocus="currentForm = this.form;" id="inputConnexion" type="text" placeholder="  Réponse" class="inputEmail" name="Question2secu" value="<?php echo Securite::afficherHTML($user->getReponse()); ?>"/> <BR><BR>
 
-					<!--Mot de passe -->	
-					<input onfocus="currentForm = this.form;" id="inputConnexion" type="password" placeholder="  Mot de passe" class="inputEmail" name="Mdp" value="<?php if (isset($_POST['Mdp'])) echo Securite::afficherHTML($_POST['Mdp']); ?>"/> <BR><BR>		
-						
-				
-					<!--Confirmation du mot de passe-->
-					<input onfocus="currentForm = this.form;" id="inputConnexion" type="password" placeholder="  Confirmez votre mot de passe" class="inputEmail" name="Pass_confirm" value="<?php if (isset($_POST['Pass_confirm'])) echo Securite::afficherHTML($_POST['Pass_confirm']); ?>"/> 
+					<!--Mot de passe -->
+					<input onfocus="currentForm = this.form;" id="inputConnexion" type="password" placeholder="  Mot de passe" class="inputEmail" name="Mdp" value="<?php if (isset($_POST['Mdp'])) echo Securite::afficherHTML($_POST['Mdp']); ?>"/> <BR><BR>
 
-				
+
+					<!--Confirmation du mot de passe-->
+					<input onfocus="currentForm = this.form;" id="inputConnexion" type="password" placeholder="  Confirmez votre mot de passe" class="inputEmail" name="Pass_confirm" value="<?php if (isset($_POST['Pass_confirm'])) echo Securite::afficherHTML($_POST['Pass_confirm']); ?>"/>
+
+
 				</div>
 							<!--BTN inscription -->
 				<div id="col1" class="col-md-2">
 					<input class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btnConnexion" type="submit" name="inscription" value="Inscription"/>
 				</div>
-				</form> 
-			
+				</form>
+
              </div><!--fin div class row-->
-                
-<style>
-body{
-	background-color: #333; 
-}
-#erreur{
-	height: 50px;
-	width: 100%;
-	border-style: none;
-	text-align: center;
-	top:0;
-	font-style: bold;
-	margin:auto;
-	background-color: #BD3749;
-	color:white;
-	position: fixed;
-}
-.col1{
-	padding-left:;
-}
-.titre{
-	margin:auto;
-}
-.formulaire{
-	margin-bottom:35px;
-}
 
-#inputConnexion{
-	height: 50px;
-	width: 60%;
-	border-radius:10px;
-	border-style: none;
-
-}
-.custom-select{
-	height: 50px;
-	width: 60%;
-	border-radius:10px;
-	border-style: none;
-}
-#btnConnexion{
-	background-color:#154854;
-	color:white;
-	height: 50px;
-	width: 60%;
-	border-radius:10px;
-	border-style: none;
-
-}
-#btnConnexion:hover{
-	background-color:#b4cc83;
-	color:white;
-}
-.formLien{
-    padding-left:30px;
-    padding-right:30px;
-	height: 50px;
-	width: 50%;
-}
-
-.titre{
-	font-size: 100px;
-}
-.text_accueil{
-	background-color: white;
-	height: 200px;
-    margin-left:20%;
-    margin-right:20%;
-    margin-top: 5%;
-}
-.hrIndexConnexion{
-   width : 5px;
-   height : 250px;
-   display: inline-block;
-   margin-bottom: 0px;
-}
-.formLien800maxWidth{
-	display: none;
-}
-
-
-/*******************************************/
-
-@media (max-width: 1024px){
-  .hrIndexConnexion{
-    display: none;
-  }
-  #inputConnexion{
-		width: 80%;
-	}
-	#btnConnexion{
-		width: 80%;
-	}
-	.titre{
-		margin-left:40px;
-		text-align:center;
-	}
-@media (max-width: 800px){
-  .hrIndexConnexion{
-    display: none;
-  }
-  .formulaire{
-    margin-left:20%;
-    margin-right: 10%;
-  }
-
-	#inputConnexion{
-		width: 80%;
-	}
-	#btnConnexion{
-		width: 80%;
-	}
-	#aSinscrire{
-    display: none;
-		
-	}
-	#aMDPoublie{
-	     display: none;
-
-	}
-	.formLien800maxWidth{
-	      display: block;
-    }
-}
-   @media (max-width: 20px){
-   .titre{
-   	font-size: 80px;
-   	text-align: center;
-}
-  .hrIndexConnexion{
-    display: none;
-  }
-  .formulaire{
-    margin-left:20%;
-    margin-right: 10%;
-  }
-
-	#inputConnexion{
-		width: 80%;
-	}
-	#btnConnexion{
-		width: 80%;
-	}
-	#aSinscrire{
-    display: none;
-		
-	}
-	#aMDPoublie{
-	     display: none;
-
-	}
-	.formLien800maxWidth{
-	      display: block;
-    }
-     }
-</style>
-	
 
 </body>
 </html>

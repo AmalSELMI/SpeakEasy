@@ -19,14 +19,14 @@
 <?php
     require_once('CDN.php');      // Ajout des CDN.
 ?>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <title>Library</title>
   </head>
   <body>
 
 <?php
     require_once('menu.php');
-?>           
+?>
 
 <!-- MENU LATERAL -->
 <div class="col-lg-3">
@@ -41,7 +41,7 @@
         <div class="bg-dark p-4">
           <h4 class="text-white">Vos conversations</h4>
           <span class="text-muted">Recherche par filtres</span>
-              
+
               <!-- Recherche par tag -->
               <div class="T1a">
                   <center><h6>Tag</h6></center>
@@ -293,7 +293,7 @@
     </div>
 
 
-    
+
   </div>
 </div>
 
