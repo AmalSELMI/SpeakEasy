@@ -1,25 +1,25 @@
 <?php
 	require_once('Connexion.class.php');		// Connexion à la base de données.
 	require_once(__DIR__.'/../model/Membre.class.php');
-	
+
 	class MembreDAO {
 
 		private $db;
-		
+
 		/*
 		 * Constructeur par défaut.
 		 */
 		function __construct(){
 			$this->db = Connexion::getPDOConnexion();
 		}
-		
+
 		/*
 		 * Ajouter un nouveau membre.
 		 */
 		public function ajouterMembre($nouveauMembre){
 
 			$query = $this->db->prepare('INSERT INTO user (nom, prenom, email, pseudo, dateNaissance, mdp, reponse, sexe, adresse, langue, description) VALUES (:nom, :prenom, :email, :pseudo, :dateN, :passe, :reponse, :sexe, :adresse, :langue, :description)');
-			
+
 			$query->bindValue(':nom', $nouveauMembre->getNom(), PDO::PARAM_STR);
 			$query->bindValue(':prenom', $nouveauMembre->getPrenom(), PDO::PARAM_STR);
 			$query->bindValue(':email', $nouveauMembre->getMail(), PDO::PARAM_STR);
@@ -31,15 +31,19 @@
 			$query->bindValue(':adresse', $nouveauMembre->getAdresse(), PDO::PARAM_STR);
 			$query->bindValue(':langue', $nouveauMembre->getLangue(), PDO::PARAM_STR);
 			$query->bindValue(':description', $nouveauMembre->getDescription(), PDO::PARAM_STR);
-			
+
 			$res = 0;
-			if($query->execute()){
+			try {
+				$query->execute();
 				$res = 1;
+			} catch(PDOException $ex) {				// Traiter les requêtes invalides.
+				$res = -1;
 			}
+
 			$query->CloseCursor();
 			return $res;
 		}
-		
+
 		/*
 		 * Mise à jour du profil d'un membre.
 		 */
@@ -70,12 +74,12 @@
 			$query->CloseCursor();
 			return $res;
 		}
-		
+
 		/*
 		 * Utile pour assurer l'authentification de chaque membre.
 		 */
 		public function authentification($email, $mdp){
-			
+
 			$sql = $this->db->prepare('SELECT id_user, nom ,prenom, email, pseudo, photo, dateNaissance, mdp, reponse, sexe, adresse, langue, description FROM user WHERE email = :email AND mdp = :mdp');
 			$sql->bindValue(':email', $email, PDO::PARAM_STR);
 			$sql->bindValue(':mdp', $mdp, PDO::PARAM_STR);
@@ -107,43 +111,43 @@
 		 * Déconnexion d'un membre.
 		 */
 		public function modifierStatut($idMembre, $statut){
-			$query = $this->db->prepare("UPDATE connexion SET statut_connexion = :statut WHERE id_user = :id_user");
+			$query = $this->db->prepare("UPDATE user SET statut_connexion = :statut WHERE id_user = :id_user");
 			$query->bindValue(':id_user', $idMembre, PDO::PARAM_INT);
 			$query->bindValue(':statut', $statut, PDO::PARAM_STR);
 			$query->execute();
 			$query->CloseCursor();
 		}
-		
+
 		/*
 		 * Utiliser pour vérifier que l'adresse mail ou le pseudo sont bien uniques.
 		 */
 		public function rechercherMailOuPseudo($email, $pseudo){
-			
+
 			$result = $this->db->prepare('SELECT count(id_user) AS total FROM user WHERE email LIKE :email OR pseudo LIKE :pseudo');
 			$result->bindValue(':email', $email, PDO::PARAM_STR);
 			$result->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
 			$result->execute();
 			$resultat = 0;
 			$row = $result->fetch();
-			
+
 			if($row['total'] > 0){
 				$resultat = 1;
 			}
-			
+
 			$result->CloseCursor();
 			return $resultat;
 		}
-		
+
 		/*
 		 * Utiliser lors de la phase de vérification de l'unicité de l'adresse mail avant chaque nouvelle inscription.
 		 */
 		public function rechercherMembreConnecte($id_Membre){
-			$query = $this->db->prepare('SELECT pseudo FROM user INNER JOIN connexion on user.id_user = connexion.id_user WHERE connexion.statut_connexion LIKE "CONNECTE" AND user.id_user <> :id_user');
+			$query = $this->db->prepare('SELECT pseudo FROM user WHERE user.statut_connexion LIKE "CONNECTE" AND user.id_user <> :id_user');
 			$query->bindValue(':id_user', $id_Membre, PDO::PARAM_INT);
 			$query->execute();
 			$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
 			$query->CloseCursor();
-			
+
 			if($result){
 				return $result;
 			} else {
