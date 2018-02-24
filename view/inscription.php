@@ -124,7 +124,9 @@
 				</form>
 
              </div><!--fin div class row-->
-
+ <!-- <?php 
+               require_once("footer.php");
+               ?> -->
 <style>
 body{
 	background-color: #333;

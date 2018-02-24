@@ -1,0 +1,344 @@
+body {
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+
+/*** CONTAINER 1 ***/
+
+.container-fluid{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.containerColor{
+	font-family: Roboto;
+    background: -webkit-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* W3C */
+	margin-top: 0;
+	margin-bottom: 80px;
+}
+
+.ct{
+	padding: 20px 20px 20px 20px;
+}
+
+.logo{
+	padding: 20px 20px 20px 60px;
+}
+.ct h1 {
+	padding-top: 100px;
+	text-align: center;
+	font-size: 70px;
+}
+
+.ct h4 {
+	padding-top: 10px;
+	text-align: center;
+	font-size: 30px;
+	color: #b4cc83;
+}
+
+.devices{
+	padding: 100px 40px 20px 100px;
+}
+
+.devices img{
+	max-width: 100%;
+}
+
+
+/*** CONTAINER 2 ***/
+
+.containerWhite{
+	background-color: white;
+	margin-bottom: 80px;
+}
+
+.demo{
+	padding: 0 30px 0 30px;
+}
+
+.ConT video{
+	max-width: 80%;
+	border: solid 1px;
+	border-color: grey;
+	border-radius: 5px;
+	margin-left: 60px;
+}
+
+.marque{
+	margin: auto;
+}
+
+.marque p{
+	text-align: center;
+	font-size: 14px;
+	color: #154854;
+	margin: -12px 70px 10px -10px;
+}
+
+/*** CONTAINER 3 INSCRIPTION ***/
+
+.containerColor{
+	font-family: Roboto;
+    background: -webkit-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* W3C */
+}
+
+.bloc{
+	padding: 80px 0 80px 0;
+}
+
+h2{
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.box{
+	padding: 40px 40px 40px 40px;
+	background-color: white;
+	border: solid 1px;
+	border-color: grey;
+	border-radius: 5px;
+}
+
+.box .champ{
+	width: 60%;
+	background-color: #b4cc83;
+	color: #ffff;
+	margin-left: 20%;
+	z-index: 1;
+	border: solid 1px;
+	border-color: grey;
+	border-radius: 5px;
+}
+
+#btnConnexion{
+	border: 1px solid #b4cb86;
+    background-color: #b4cb86;
+    color: #184853;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-left: 41%;
+	}
+
+.formLien{
+	text-align: center;
+}
+
+#aSinscrire{
+	text-align: center;
+}
+
+/*** CONTAINER 4 SERVICES ***/
+
+.video{
+	max-width: 40%;
+	height: 180px;
+	margin: auto;
+}
+
+.video img{
+	max-width: 100%;
+}
+
+.chat{
+	max-width: 40%;
+	height: 180px;
+	margin: auto;
+}
+
+.chat img{
+	max-width: 100%;
+}
+
+.tag{
+	max-width: 40%;
+	height: 180px;
+	margin: auto;
+}
+
+.tag img{
+	max-width: 100%;
+}
+
+.col-lg-4 #explain{
+	width: 350px;
+	margin-left: -50px;
+}
+
+.box2{
+	height: 600px;
+}
+
+.box2 p{
+	text-align: center;
+	font-size: 18px;
+	color: #154854;
+	margin: 10px 100px 10px 0;
+}
+
+.box2 h3{
+	text-align: center;
+	margin: 60px 100px 10px 0;
+}
+
+
+/*** FOOTER ***/
+
+.containerColor .footer{
+	font-family: Roboto;
+    background: -webkit-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #154854 10%, #b4cc83 90%); /* W3C */
+}
+
+.footer{
+	height: 150px;
+	padding-top: 20px;
+	margin-bottom: 0;
+}
+
+.footer p{
+	text-align: center;
+	margin-bottom: 35px;
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+
+
+
+/*** RESPONSIVE ***/
+
+
+/**   .col-lg-  Smartphones // > 1024px pour les grandes tablettes et ordinateurs de bureaux **/
+@media tv (min-width:970px) and (max-resolution:1170px) {
+	.box2{
+        height: 600px;
+      }
+}
+
+/**   .col-sm- & .col-md- // entre 768px et 1024px pour les smartphones modernes et tablettes orientées portrait **/
+@media tv (min-width:768px) and (max-resolution:1024px) {
+	.logo{
+        padding: 20px 20px 20px 50px;
+      }
+    .devices{
+    	padding: 20px 80px 20px 80px;
+    }
+
+    .box{
+    	max-width: 70%;
+    	margin: auto;
+    }
+
+
+
+}
+
+/**   .col-xs- // smartphones avec une règle < 768px **/
+@media (max-width: 768px) {
+    .logo{
+        max-width: 100%;
+        padding: 20px 20px 20px 20px;
+    	}
+    .ct h1{
+    	padding-top: 30px;
+    	text-align: center;
+    	font-size: 50px;
+    	}
+    .ct h4{
+    	font-size: 20px;
+    	}
+    .devices{
+    	padding: 20px 20px 20px 20px;
+    }
+    .ConT video{
+    	margin-left: 10%;
+    }
+    .containerColor{
+    	margin-bottom: 20px;
+    }
+    .marque p{
+    	font-size: 14px;
+    	margin: 10px 100px 10px 100px;
+    	text-align: justify;
+    }
+    .containerWhite{
+    	margin-bottom: 20px;
+    }
+
+    .box{
+    	max-width: 70%;
+    	margin: auto;
+    }
+
+    h2{
+    	margin-bottom: 30px;
+    }
+    #btnConnexion{
+    	margin-left: 40%;
+    }
+    .video{
+		max-width: 20%;
+		margin-left: 40%;
+    }
+
+    .video #explain{
+    	position: absolute;
+    	top: -12px;
+    }
+
+    .box2 h3{
+    	margin-top: 40%;
+    	margin-left: -10%;
+    }
+
+    .containerWhite{
+    	height: 590px;
+    }
+
+	.box2 h3{
+		display: none;
+	}
+	.tag{
+		max-width: 20%;
+		margin-left: 40%;
+    }
+    /*.chat{
+    	display: none;
+    	max-width: 30%;
+    	margin-left: 35%; 
+    	margin-top: 20px;
+    }
+
+    .tchat{
+    	margin-top: 30%;
+    }*/
+
+
+
+    .box2 p{
+    	display: none;
+    }
+    }
+
+
+
+body{
+  text-align:center;
+}
+
+}
+
+
+

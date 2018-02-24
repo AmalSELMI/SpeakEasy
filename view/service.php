@@ -49,9 +49,9 @@
 ?>
                                     <div class="row w-20" style="width: 150px;">
                                         <div class="col-sm-8 col-md-3 px-0 d-flex flex-row">
-                                            <img src="ninja.jpg" class="rounded-circle mx-auto d-block img-fluid li-el">
+                                            <img src="img/user.png" class="rounded-circle mx-auto d-block img-fluid li-el">
                                             <label class="p-2 "><?php echo $value ?></label>
-                                            <span class="fa fa-phone fa-3x text-success float-right pulse p-2 li-el" title="online now"></span>
+                                            
                                         </div>
                                     </div>
 <?php
@@ -60,9 +60,8 @@
 ?>
                                 <div class="row w-20">
                                     <div class="col-sm-8 col-md-3 px-0 d-flex flex-row">
-                                        <img src="ninja.jpg" class="rounded-circle mx-auto d-block img-fluid li-el">
+                                        <img src="img/user.png" class="rounded-circle mx-auto d-block img-fluid li-el">
                                         <label class="p-2 ">Aucun membre en ligne</label>
-                                        <span class="fa fa-phone fa-3x text-success float-right pulse p-2 li-el" title="online now"></span>
                                     </div>
                                 </div>
 <?php
@@ -73,6 +72,10 @@
                 </div>
                 <div class="container_call">
                     <div id="videocall" >
+                      <div class="video-container">
+                        <video id="video" autoplay></video>
+                        <canvas></canvas>
+                      </div>
                     </div>
                     <div id="text_area">
                       <textarea id="textarea"></textarea>
@@ -92,6 +95,9 @@
                     </div>
                     <div class="detect_tags" id="detect_tags"><ul></ul></div>
               </div>
+              <?php 
+               require_once("footer.php");
+               ?>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

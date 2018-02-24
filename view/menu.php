@@ -12,19 +12,19 @@
 		case 1:
 			$onglet[0] = 'current';
 			break;
-			
+
 		case 2:
 			$onglet[1] = 'current';
 			break;
-			
+
 		case 3:
 			$onglet[2] = 'current';
 			break;
 	}
 ?>
-	<div id="app" class=" header position-fixed bg-dark">
+	<div id="app" class=" header bg-dark">
 		<nav class="navbar bg-dark navbar-expand-lg navbar-light bg-faded nav bg-company-red ">
-			<a class="navbar-brand text-white" href="../home.php">[ SpeakEasy ]</a>
+			<a class="navbar-brand text-white" >[ SpeakEasy ]</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -41,7 +41,7 @@
 						<a class="nav-link text-white <?php echo $onglet[2]; ?>" href="update_profil.php?p=3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><?php echo " ".Securite::afficherHTML($user->getPseudo()); ?></a>
                     </li>
                     <li class="nav-item">
-                    	<a href="deconnexion.php" class="nav-link text-white">Log out</a>
+                    	<a href="../deconnexion.php" class="nav-link text-white">Log out</a>
                     </li>
                 </ul>
             </div>
