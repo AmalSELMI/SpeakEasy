@@ -40,9 +40,6 @@
 
 			} else {
 
-				// Obtenir une connexion à la base de données.
-				require_once(__DIR__.'/../dao/Connexion.class.php');
-				$base = Connexion::getMySQLIConnexion();
 				// Communiquer avec la tables des utilisateurs.
 				require_once(__DIR__.'/../dao/MembreDAO.class.php');
 				$listeMembre = new MembreDAO();
@@ -52,10 +49,11 @@
 					case 0: {
 						// Enregistrement en base de données.
 						if($listeMembre->ajouterMembre($nouveauMembre) == 1){
-
+							//
+							$listeMembre->modifierStatut($nouveauMembre->getID(), 'CONNECTE');
 							// Ajouter les informations de l'utilisateur dans sa session.
 							$_SESSION['user'] = serialize($listeMembre->authentification($nouveauMembre->getMail(), $nouveauMembre->getPassword()));
-							header('Location: ../home.php');
+							header('Location: ../view/service.php');
 							exit();
 
 						} else {
@@ -70,6 +68,7 @@
 						break;
 					}
 				}
+				
 			}
 
 		} else {
